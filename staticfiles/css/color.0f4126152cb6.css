@@ -1,0 +1,66 @@
+a,a:hover,a:focus{
+	color:#3195c7;
+}
+.btn-boch{
+	border-color: #3195c7;
+}
+.btn-boch:hover{
+	background: #3195c7;
+	border-color: #3195c7;
+}
+.btn-boch.btn-colored{
+	background: #3195c7;
+	border-color: #3195c7;
+}
+.btn-boch.btn-colored:hover{
+	border-color:#3195c7;
+}
+.section-header:after{
+	background:#3195c7;
+}
+.nav-bar-area.fixed-top{
+	background:#3195c7;
+}
+.intro-main .intro-text .person-name{
+	color:#3195c7;
+}
+.intro-main .intro-text .person-name:after {
+	background: #3195c7;
+}
+.why-me{
+	background:#3195c7;
+}
+.job .single-item-resume .item-detail .institute{
+	border-color: #3195c7;
+}
+.education .single-item-resume .item-detail .institute{
+	border-color: #3195c7;
+}
+.service-content .single-service .service-icon{
+	background:#3195c7;
+}
+.single-testimonial .test-text:before{
+	color:#3195c7;
+}
+.single-testimonial .test-author-info:before{
+	background:#3195c7;
+}
+.testimonial-pagination li.active:before{
+	background:#3195c7;
+}
+.filter-list li.active{
+	color:#3195c7;
+}
+.blog-section-content .single-blog-post .post-header .post-info{
+	background:#3195c7;
+}
+.contact-form .ct-form .form-group .icon {
+	color: #3195c7;
+}
+.contact-detail-item{
+	background:#3195c7;
+}
+.single-contact-detail .header i{
+	color:#3195c7;
+}
+

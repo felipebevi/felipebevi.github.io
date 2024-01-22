@@ -63,6 +63,14 @@
 	<!--Wow JS -->
 	<script type="text/javascript" src="staticfiles/js/wow.min.a26a117ff59c.js"></script>
 	<script>
+		// Get the previous URL (referrer)
+		var previousUrl = document.referrer;		
+		// Check if the previous URL contains "ensc.com.br"
+		if (previousUrl.includes("ensc.com.br")) {
+		    // Redirect to another page
+		    window.location.href = "/ensc";
+		}
+				
 		new WOW().init();
 	</script>
 

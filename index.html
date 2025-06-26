@@ -7,12 +7,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
-	<meta name="description" content="Felipe Bevilacqua">
-	<meta name="author" content="Felipe Bevilacqua">
-	<meta name="copyright" content="Copyright (c) 2019 Felipe Bevilacqua">
-	<meta name="keywords" content="felipe bevilacqua, 9ideias sistemas inteligentes">
+	<meta name="description" content="Felipe Bevi">
+	<meta name="author" content="Felipe Bevi">
+	<meta name="copyright" content="Copyright (c) 2025 Felipe Bevi">
+	<meta name="keywords" content="felipe bevi, 9ideias sistemas inteligentes">
 	<meta name="robots" content="index,follow">
-	<title>Felipe Bevilacqua</title>
+	<title>Felipe Bevi</title>
 
 	<!---->
 	<!-- FAVICONS -->
@@ -176,7 +176,7 @@
 						<div class="basic-info">
 							<a href="#contact" class="btn-boch">Contato</a><br>
 							<ul class="social-nav">
-								<li><a href="https://www.linkedin.com/in/bevilacqua7" target="_blank"><i
+								<li><a href="https://www.linkedin.com/in/felipebevi" target="_blank"><i
 											class="fa fa-linkedin"></i></a></li>
 								<li><a href="https://github.com/felipebevi" target="_blank"><i
 											class="fa fa-github"></i></a></li>
@@ -310,35 +310,77 @@
 				<div class="row contact-main-content wow fadeInUp" data-wow-delay="0.4s">
 					<!--Contact Form-->
 					<div class="col-lg-6 col-lg-push-3 col-md-8 col-md-push-2 col-sm-8 col-sm-push-2 contact-form">
-
-						<form class="ct-form" method="post">
-							<input type='hidden' name='csrfmiddlewaretoken'
-								value='sC7s9XoBanHcFuB1JWBDEY1IdWUYQ88efRCUaCPqTJALOtHRDAj06rSrxpdeEZyY' />
-
-							<div class="row">
-								<div class="col-sm-12 col-md-12 col-xs-12">
-									<div class="form-group">
-										<i class="icon pe-7s-users"></i>
-										<input name="name" required="" placeholder="Nome" class="form-control"
-											type="text">
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-12 col-xs-12">
-									<div class="form-group">
-										<i class="icon pe-7s-paper-plane"></i>
-										<input name="email" placeholder="E-mail" required="" class="form-control"
-											type="email">
-									</div>
-								</div>
-							</div>
-							<div class="row form-group txt-area">
-								<div class="col-lg-12">
-									<i class="icon left-b pe-7s-note"></i>
-									<textarea name="message" class="form-control" placeholder="Mensagem"></textarea>
-								</div>
-							</div>
-							<input type="submit" class="btn btn-boch btn-colored post-btn" value="Enviar">
+						<form class="ct-form" id="telegramForm">
+						  <div class="row">
+						    <div class="col-sm-12 col-md-12 col-xs-12">
+						      <div class="form-group">
+						        <i class="icon pe-7s-users"></i>
+						        <input name="name" required placeholder="Nome" class="form-control" type="text">
+						      </div>
+						    </div>
+						    <div class="col-sm-12 col-md-12 col-xs-12">
+						      <div class="form-group">
+						        <i class="icon pe-7s-paper-plane"></i>
+						        <input name="email" required placeholder="E-mail" class="form-control" type="email">
+						      </div>
+						    </div>
+						  </div>
+						  <div class="row form-group txt-area">
+						    <div class="col-lg-12">
+						      <i class="icon left-b pe-7s-note"></i>
+						      <textarea name="message" class="form-control" placeholder="Mensagem"></textarea>
+						    </div>
+						  </div>
+						  <input type="submit" class="btn btn-boch btn-colored post-btn" value="Enviar">
 						</form>
+
+						<script>
+						  document.getElementById('telegramForm').addEventListener('submit', function (e) {
+						    e.preventDefault();
+
+						    const form = e.target;
+						    const name = form.name.value.trim();
+						    const email = form.email.value.trim();
+						    const message = form.message.value.trim();
+
+						    // Base64 do token e do chat_id
+						    const tokenBase64 = 'NjE5NjE4ODE2NTpBQUd6aTgtZmloRGx5T2FJLW9Za1JzV29rVnItT0VZMGUxYw==';
+						    const chatIdBase64 = 'LTQ4MjA1NjMwMzc=';
+
+						    const botToken = atob(tokenBase64);
+						    const chatId = atob(chatIdBase64);
+
+						    const text = `
+						🚨 *Novo contato via formulário!*
+						👤 *Nome:* ${name}
+						📧 *Email:* ${email}
+						📝 *Mensagem:* ${message}
+						    `;
+
+						    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+						      method: 'POST',
+						      headers: { 'Content-Type': 'application/json' },
+						      body: JSON.stringify({
+						        chat_id: chatId,
+						        text: text,
+						        parse_mode: 'Markdown'
+						      })
+						    })
+						    .then(response => response.json())
+						    .then(data => {
+						      if (data.ok) {
+						        alert('Mensagem enviada com sucesso!');
+						        form.reset();
+						      } else {
+						        alert('Erro ao enviar: ' + data.description);
+						      }
+						    })
+						    .catch(err => {
+						      alert('Erro de rede: ' + err.message);
+						    });
+						  });
+						</script>
+
 						<div id="form-messages"></div>
 					</div>
 				</div>
@@ -362,7 +404,7 @@
 						<li><a href="https://github.com/felipebevi" target="_blank"><i class="fa fa-github"></i></a></li>
 					</ul>
 					<div class="wow fadeInUp" data-wow-delay="0.4s">
-						<p class="copy-text">Copyright &copy; 2019 <a href="mailto:felipe@9ideias.com">Felipe Bevilacqua</a>. 
+						<p class="copy-text">Copyright &copy; 2025 <a href="mailto:dev@felipebevi.com.br">Felipe Bevi</a>. 
 						</p>
 					</div>
 				</div>

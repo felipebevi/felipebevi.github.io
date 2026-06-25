@@ -206,20 +206,27 @@
 }
 @media (max-width:767px){
 	.company-section{
-		min-height:560px;
+		min-height:590px;
 	}
 	.company-card{
-		padding:36px 24px;
+		padding:30px 22px;
 		margin-right:15px;
 		margin-left:15px;
+		display:block;
+		text-align:center;
 	}
-	.company-logo-link{
-		max-width:360px;
-		padding:14px 20px;
+	.company-brand{
 		margin-bottom:24px;
 	}
+	.company-logo-link{
+		width:190px;
+		padding:10px 12px;
+	}
+	.company-copy{
+		text-align:center;
+	}
 	.company-card h2{
-		font-size:28px;
+		font-size:26px;
 	}
 	.company-card .company-description{
 		font-size:15px;

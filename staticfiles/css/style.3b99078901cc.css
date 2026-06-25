@@ -862,7 +862,7 @@ p{
 =  Company Section  =
 ===================== */
 .company-section{
-	min-height:640px;
+	min-height:600px;
 	display:flex;
 	align-items:center;
 	background-image:url('../images/company/9ideias-technology-background.jpg');
@@ -875,7 +875,7 @@ p{
 	content:"";
 	position:absolute;
 	inset:0;
-	background:linear-gradient(135deg, rgba(4,13,27,.88), rgba(9,50,75,.68));
+	background:linear-gradient(90deg, rgba(3,15,29,.48), rgba(5,48,73,.28));
 }
 .company-content{
 	position:relative;
@@ -883,24 +883,29 @@ p{
 	width:100%;
 }
 .company-card{
-	max-width:760px;
+	max-width:940px;
 	margin:0 auto;
-	padding:48px 56px;
-	text-align:center;
-	background:rgba(8,20,32,.84);
-	border:1px solid rgba(255,255,255,.16);
-	border-radius:16px;
+	padding:38px 44px;
+	display:flex;
+	align-items:center;
+	gap:48px;
+	background:rgba(5,18,31,.88);
+	border:1px solid rgba(255,255,255,.2);
+	border-radius:12px;
 	box-shadow:0 24px 60px rgba(0,0,0,.28);
-	-webkit-backdrop-filter:blur(8px);
-	backdrop-filter:blur(8px);
+	-webkit-backdrop-filter:blur(5px);
+	backdrop-filter:blur(5px);
+}
+.company-brand{
+	flex:0 0 260px;
+	text-align:center;
 }
 .company-logo-link{
-	width:100%;
-	max-width:430px;
-	padding:18px 26px;
-	margin-bottom:28px;
+	width:260px;
+	max-width:100%;
+	padding:15px 18px;
 	background:rgba(255,255,255,.96);
-	border-radius:10px;
+	border-radius:8px;
 	transition:transform .25s ease, box-shadow .25s ease;
 }
 .company-logo-link:hover,
@@ -912,6 +917,10 @@ p{
 	display:block;
 	width:100%;
 	height:auto;
+}
+.company-copy{
+	flex:1 1 auto;
+	text-align:left;
 }
 .company-card .company-eyebrow{
 	margin:0 0 4px;
@@ -925,14 +934,13 @@ p{
 .company-card h2{
 	margin-bottom:14px;
 	color:#fff;
-	font-size:36px;
+	font-size:32px;
 	line-height:1.3;
 }
 .company-card .company-description{
-	max-width:610px;
-	margin:0 auto 26px;
+	margin:0 0 24px;
 	color:rgba(255,255,255,.85);
-	font-size:16px;
+	font-size:15px;
 	line-height:1.8;
 }
 .company-cta{
